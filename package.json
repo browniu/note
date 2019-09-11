@@ -7,10 +7,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy": "yarn build && gh-pages -d docs/.vuepress/dist"
   },
   "devDependencies": {
     "@vuepress/theme-blog": "^1.2.5",
+    "gh-pages": "^2.1.1",
     "vuepress": "^1.0.4"
   }
 }
