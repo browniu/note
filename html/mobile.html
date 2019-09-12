@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>移动端 | BROWNIU NOTES</title>
+    <meta name="description" content="BROWNIU 的工作笔记">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.8ce8701a.css" as="style"><link rel="preload" href="/assets/js/app.6384594b.js" as="script"><link rel="preload" href="/assets/js/2.47b36fb1.js" as="script"><link rel="preload" href="/assets/js/9.c64b858a.js" as="script"><link rel="prefetch" href="/assets/js/10.5af3635f.js"><link rel="prefetch" href="/assets/js/3.7850242b.js"><link rel="prefetch" href="/assets/js/4.9157cd7c.js"><link rel="prefetch" href="/assets/js/5.c9e9eba3.js"><link rel="prefetch" href="/assets/js/6.47ab6ce4.js"><link rel="prefetch" href="/assets/js/7.de7a9217.js"><link rel="prefetch" href="/assets/js/8.ea57b730.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8ce8701a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">BROWNIU NOTES</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">一级检索</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">JavaScript</a></li><li class="dropdown-item"><!----> <a href="/html/" class="nav-link router-link-active">html</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">一级检索</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">JavaScript</a></li><li class="dropdown-item"><!----> <a href="/html/" class="nav-link router-link-active">html</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/html/" class="sidebar-link">Html Native</a></li><li><a href="/html/mobile.html" class="active sidebar-link">移动端</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/html/mobile.html#禁用橡皮筋" class="sidebar-link">禁用橡皮筋</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="移动端"><a href="#移动端" aria-hidden="true" class="header-anchor">#</a> 移动端</h1> <h2 id="禁用橡皮筋"><a href="#禁用橡皮筋" aria-hidden="true" class="header-anchor">#</a> 禁用橡皮筋</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchmove'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">.</span>isSCROLL<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//阻止默认事件(上下滑动)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">//需要滑动的区域</span>
+      <span class="token keyword">var</span> top <span class="token operator">=</span> el<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span> <span class="token comment">//对象最顶端和窗口最顶端之间的距离 </span>
+      <span class="token keyword">var</span> scrollH <span class="token operator">=</span> el<span class="token punctuation">.</span>scrollHeight<span class="token punctuation">;</span> <span class="token comment">//含滚动内容的元素大小</span>
+      <span class="token keyword">var</span> offsetH <span class="token operator">=</span> el<span class="token punctuation">.</span>offsetHeight<span class="token punctuation">;</span> <span class="token comment">//网页可见区域高</span>
+      <span class="token keyword">var</span> cScroll <span class="token operator">=</span> top <span class="token operator">+</span> offsetH<span class="token punctuation">;</span> <span class="token comment">//当前滚动的距离</span>
+      <span class="token comment">//被滑动到最上方和最下方的时候</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>top <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        top <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//0～1之间的小数会被当成0</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cScroll <span class="token operator">===</span> scrollH<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        el<span class="token punctuation">.</span>scrollTop <span class="token operator">=</span> top <span class="token operator">-</span> <span class="token number">0.1</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> passive<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">//passive防止阻止默认事件不生效</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/html/" class="prev router-link-active">
+          Html Native
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6384594b.js" defer></script><script src="/assets/js/2.47b36fb1.js" defer></script><script src="/assets/js/9.c64b858a.js" defer></script>
+  </body>
+</html>
