@@ -1,4 +1,4 @@
-# 移动端
+# 移动端适配
 ## 禁用橡皮筋/回弹
 ```javascript
 document.body.addEventListener('touchmove', function (e) {

@@ -4,14 +4,17 @@ module.exports = {
     base: '/note/',
     repo: 'https://browniu.github.io/note/',
     themeConfig: {
-        nav:[
-            { text: 'Start',
-                items: [
-                    { text: 'JavaScript', link: '/JavaScript/object' },
-                    { text: 'html', link: '/html/' },
-                    { text: 'workflow', link: '/workflow/git' },
-                ]
-            },
+        nav: [
+            // { text: '检索',
+            //     items: [
+            //         { text: 'JavaScript', link: '/JavaScript/object' },
+            //         { text: 'html', link: '/html/' },
+            //         { text: 'workflow', link: '/workflow/git' },
+            //     ]
+            // },
+            {text: '逻辑', link: '/JavaScript/object'},
+            {text: '静态', link: '/html/'},
+            {text: '工作流', link: '/workflow/git'},
         ],
         sidebar: {
             '/JavaScript/': [
@@ -28,12 +31,13 @@ module.exports = {
                 'device',
                 'fragment',
                 'math',
-                'storage'
+                'storage',
+                'decorater'
             ],
             '/html/': [
                 '',
-                'mobile',
-                'css'
+                'css',
+                'mobile'
             ],
             '/workflow/': [
                 'git',

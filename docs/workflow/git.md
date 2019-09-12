@@ -1,4 +1,4 @@
-# GIT
+# Git
 
 ## 一键提交 Commit
 ```bash
