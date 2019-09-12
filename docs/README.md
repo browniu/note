@@ -1,6 +1,6 @@
 ---
 home: true
-actionText: 收获知识 →
+actionText: 拔剑吧 →
 actionLink: /JavaScript/
 features:
 - title: 简洁至上

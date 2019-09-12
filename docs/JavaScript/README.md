@@ -1,4 +1,4 @@
-# JavaScript Native
+# JS Native
 
 关于JavaScript的一切
 

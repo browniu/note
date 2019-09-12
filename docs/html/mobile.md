@@ -1,5 +1,5 @@
 # 移动端
-## 禁用橡皮筋
+## 橡皮筋 回弹
 ```javascript
 document.body.addEventListener('touchmove', function (e) {
     if (!e.isSCROLL) {

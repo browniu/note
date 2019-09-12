@@ -1,6 +1,8 @@
 module.exports = {
     title: 'BROWNIU NOTES',
-    description: 'BROWNIU 的工作笔记',
+    description: '布朗牛的工作笔记速查',
+    base: '/note/',
+    repo: 'https://browniu.github.io/note/',
     themeConfig: {
         nav:[
             { text: '检索',
