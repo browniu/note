@@ -1,28 +1,46 @@
 module.exports = {
     title: 'BROWNIU NOTES',
-    description: '布朗牛的工作笔记速查',
+    description: '前端开发工作笔记速查',
     base: '/note/',
     repo: 'https://browniu.github.io/note/',
     themeConfig: {
         nav:[
-            { text: '检索',
+            { text: 'Start',
                 items: [
-                    { text: 'JavaScript', link: '/JavaScript/' },
-                    { text: 'html', link: '/html/' }
+                    { text: 'JavaScript', link: '/JavaScript/object' },
+                    { text: 'html', link: '/html/' },
+                    { text: 'workflow', link: '/workflow/git' },
                 ]
             },
         ],
         sidebar: {
             '/JavaScript/': [
-                '',
-                'array'
+                'object',
+                'array',
+                'string',
+                'number',
+                'event',
+                'http',
+                'scroll',
+                'router',
+                'environment',
+                'canvas',
+                'device',
+                'fragment',
+                'math',
+                'storage'
             ],
             '/html/': [
                 '',
-                'mobile'
+                'mobile',
+                'css'
             ],
-
-
-        }
+            '/workflow/': [
+                'git',
+                'react'
+            ],
+        },
+        lastUpdated: 'Last Updated',
     }
 };
+

@@ -1,7 +1,7 @@
 ---
 home: true
-actionText: 拔剑吧 →
-actionLink: /JavaScript/
+actionText: 立即执行 →
+actionLink: /JavaScript/object
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置完成写作。
