@@ -17,4 +17,3 @@ Object.keys({a:'xixi',b:'haha'}) // ['a','b']
 ```javascript
 Object.values({a:'xixi',b:'haha'}) // ['xixi','haha']
 ```
-#
