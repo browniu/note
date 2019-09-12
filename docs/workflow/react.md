@@ -62,7 +62,7 @@ export default ReactDOMServer.renderToStaticMarkup(<TemplateDom config={config}/
 ```
 
 ## 样式作用域
-```javascript
+```javascript{4}
 import styles from './index.less';
 //...
 <div className={styles.demo} />
