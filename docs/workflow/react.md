@@ -60,3 +60,12 @@ class TemplateDom extends Component {
 export default ReactDOMServer.renderToStaticMarkup(<TemplateDom config={config}/>)
 
 ```
+
+## 样式作用域
+```javascript
+import styles from './index.less';
+//...
+<div className={styles.demo} />
+<div className={styles.demo,true?[styles.active]:''} />
+//...
+```
