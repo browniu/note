@@ -4,6 +4,16 @@ module.exports = {
     base: '/note/',
     repo: 'https://browniu.github.io/note/',
     themeConfig: {
+        repo: 'browniu/note',
+        repoLabel: '查看源码',
+        // 假如文档不是放在仓库的根目录下：
+        docsDir: 'docs',
+        // 假如文档放在一个特定的分支下：
+        docsBranch: 'master',
+        // 默认是 false, 设置为 true 来启用
+        editLinks: true,
+        // 默认为 "Edit this page"
+        editLinkText: '查漏补缺',
         nav: [
             // { text: '检索',
             //     items: [
@@ -44,7 +54,7 @@ module.exports = {
                 'react'
             ],
         },
-        lastUpdated: 'Last Updated',
+        lastUpdated: '最后编辑',
     }
 };
 

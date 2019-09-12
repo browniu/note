@@ -1,7 +1,7 @@
 # React
 
 ## watch
-```jsx
+```jsx{1}
 componentWillReceiveProps(nextProps) {
   if (this.props.list !== nextProps.list) {
     if (nextProps.list) {
@@ -12,7 +12,7 @@ componentWillReceiveProps(nextProps) {
 ```
 
 ## 动态类名
-```javascript
+```javascript{3}
 import cx from 'classnames';
 //...
 <div className={cx(demo,active:true)} />
@@ -20,7 +20,7 @@ import cx from 'classnames';
 ```
 
 ## 动态模版
-```JavaScript
+```JavaScript {7}
 // config/webpack.config.js
 new HtmlWebpackPlugin(
     Object.assign(
@@ -33,7 +33,7 @@ new HtmlWebpackPlugin(
     )
 )
 ```
-```JavaScript
+```JavaScript {24}
 // src/config/template/index.js
 import React, {Component} from 'react';
 import ReactDOMServer from 'react-dom/server';
