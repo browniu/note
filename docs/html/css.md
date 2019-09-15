@@ -39,3 +39,14 @@ i {
 }
 
 ```
+
+## 限制fixed定位
+
+```css
+.parent{
+	transform:translate(0)
+}
+.son{
+	position:fixed
+}
+```

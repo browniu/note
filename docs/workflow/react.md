@@ -69,3 +69,66 @@ import styles from './index.less';
 <div className={styles.demo,true?[styles.active]:''} />
 //...
 ```
+
+## Px2Rem
+```javascript{12}
+// webpack.config.js
+const px2rem = require('postcss-px2rem-exclude');
+//...
+{
+	//...
+  loader: require.resolve('postcss-loader'),
+  options: {
+    ident: 'postcss',
+    plugins: () => [
+		//...
+      px2rem({
+        remUnit:75,exclude: /node_modules/i
+      })
+    ],
+  },
+	//...
+},
+```
+
+## 传送门
+```jsx
+import {createPortal} from 'react-dom'
+export default class ExampleComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.dom = document.createElement('div')
+    document.body.appendChild(this.dom)
+  }
+	render() {
+	 return(
+	 //...
+		{createPortal(<div>xixi</div>),this.dom}
+   //...
+	 )
+	}
+}
+```
+
+## css-transform 模版
+
+```css
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: 0.7s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: 0.7s ease;
+}
+```
+```

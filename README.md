@@ -4,4 +4,4 @@
 
 ## base
 * [vuepress](https://vuepress.vuejs.org/zh/)
-* [deploy-pg]()
+* [gh-pages]()
