@@ -131,4 +131,3 @@ export default class ExampleComponent extends Component {
   transition: 0.7s ease;
 }
 ```
-```
