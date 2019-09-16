@@ -2,12 +2,4 @@ language: node_js
 node_js:
   - lts/*
 script:
-  - yarn build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: docs/.vuepress/dist
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  on:
-    branch: master
+  - npm run deploy
