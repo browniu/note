@@ -130,4 +130,5 @@ export default class ExampleComponent extends Component {
   opacity: 0;
   transition: 0.7s ease;
 }
+
 ```
