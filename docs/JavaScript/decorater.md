@@ -1,6 +1,13 @@
 # 装饰器
+## 配置
+```JavaScript
 
-## catchError
+```
+```JavaScript
+
+```
+## 模版
+### catchError
 ```JavaScript
 export default function(target, name, descriptor) {
   const oldValue = descriptor.value;
@@ -16,7 +23,7 @@ export default function(target, name, descriptor) {
 }
 ```
 
-## 输入输出打印
+### 输入输出打印
 ```javascript
 export function log(target, name, descriptor) {
     const oldValue = descriptor.value;
@@ -32,7 +39,7 @@ export function log(target, name, descriptor) {
 }
 ```
 
-## 数字类型转换
+### 数字类型转换
 ```javascript
 export function parse(target, name, descriptor) {
     const oldValue = descriptor.value;

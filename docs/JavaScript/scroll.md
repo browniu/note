@@ -16,3 +16,10 @@ window.onscroll=()=>{
 ```javascript
 document.body.scrollTop(100)
 ```
+
+## 判断是否存在
+```javascript
+hasScrollbar() {
+  return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
+}
+```
