@@ -32,26 +32,33 @@ preloadCore(src) {
 ```
 
 ## 截流
-合并触发，周期响应
+阻止触发，周期内响应一次
 
 ```javascript
-let timer = 0
-function throttle(callback, param) {
-    let cur = Date.now()
-    if (cur - pre > 500) {
-        callback(param)
-        pre = cur
+function throttle(func, wait) {
+    let previous = 0;
+    return function () {
+        const now = Date.now();
+        const context = this;
+        const args = arguments;
+        if (now - previous > wait) {
+            func.apply(context, args);
+            previous = now
+        }
     }
 }
 ```
 
 ## 防抖
-阻止触发，停止响应
-
+阻止触发，停止触发后延迟响应
 ```javascript
-let timer 
-function debounce(callback, param) {
-    clearTimeout(timer)
-    timer = setTimeout(() => callback(param), 500)
+function debounce(func, wait) {
+    let timeout;
+    return function () {
+        const context = this
+        const args = arguments
+        if (timeout) clearTimeout(timeout)
+        timeout = setTimeout(() => func.apply(context, args), wait)
+    }
 }
 ```
