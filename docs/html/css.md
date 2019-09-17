@@ -100,3 +100,49 @@ span[name$='xixi'] /*具有此属性且值以xixi结尾的span元素*/
 span[name*='xixi'] /*具有此属性且值包含xixi的span元素*/
 span[name|='xixi'] /*具有此属性且值等于xixi或以xixi-开头的span元素*/
 ```
+
+## DT布局（table）
+### 垂直居中 
+```css
+.parent{
+  display: table-cell;
+  vertical-align: middle;
+}
+```
+### 水平居中
+```css
+.son{
+  display: table;
+  margin:auto;
+}
+```
+### 响应式
+```css
+.parent{
+    display: table;
+}
+.son{
+    display: table-cell;
+}
+```
+### 固定底部
+```css
+.parent{
+    display: table;
+}
+.footer{
+    display: table-row;
+}
+```
+### 圣杯
+```css
+.parent{
+    display: table;
+}
+.header,.footer{
+    display: table-row;
+}
+.main{
+    display: table-cell;
+}
+```
