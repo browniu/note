@@ -56,13 +56,15 @@ i {
 ### 标准写法
 
 ```css
-font-family:'Helvetica Neue',Helvetica,Arial,Microsoft Yahei,sans-serif;
+font-family:Microsoft Yahei,'微软雅黑',Tahoma,'Helvetica Neue',Helvetica,'PingFang SC',sans-serif;
 ```
 
-| 字体（类）名称             | 说明                               | 版权 |
+| 字体         | 说明                               | 版权 |
 | -------------------------- | ---------------------------------- | ---- |
-| Helvetica Neue / Helvetica | MAC平台的默认字体                  | 无   |
-| Arial / Microsoft Yahei    | Windows 平台上默认的无衬线西文字体 | 无   |
+| Microsoft Yahei /'微软雅黑'   | Windows平台默认的字体 | 无   |
+| Tahoma | 许多不喜欢 Arial 字体的人常常会改用 Tahoma 来代替，除了是因为 Tahoma 很容易取得之外，也是因为 Tahoma 没有一些 Arial 为人诟病的缺点，例如大写“i”与小写“L”难以分辨等。 | 无   |
+| Helvetica Neue / Helvetica | MAC平台的默认西文字体 | 无   |
+| Helvetica Neue / Helvetica | MAC平台的默认西文字体 | 无   |
 | sans-serif                 | 非衬线字体家族，常作为兜底方案     | 无   |
 
 ### 关于版权
