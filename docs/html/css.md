@@ -110,3 +110,13 @@ li:first-of-type {}
 ```css
 p{padding: inherit;}  /*强制继承父级该属性*/
 ```
+
+## 超出省略(...)
+```css
+p{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+```
