@@ -89,3 +89,14 @@ font-family:Microsoft Yahei,'微软雅黑',Tahoma,'Helvetica Neue',Helvetica,'Pi
 * [你该知道的字体 font-family](https://github.com/chokcoco/iCSS/issues/6)
 * [如何优雅的选择字体(font-family)](https://segmentfault.com/a/1190000006110417)
 * [微软雅黑这样使用不侵权](https://www.zhihu.com/search?type=content&q=font-family%20%E7%89%88%E6%9D%83)
+
+## 属性选择器
+```css
+span[name] /*具有此属性的span元素*/
+span[name='xixi'] /*具有此属性且值等于xixi的span元素*/
+span[name^='xixi'] /*具有此属性且值以xixi开头的span元素*/
+span[name～='xixi'] /*具有此属性且值用空格为分隔符且其中一个值等于xixi的span元素*/
+span[name$='xixi'] /*具有此属性且值以xixi结尾的span元素*/
+span[name*='xixi'] /*具有此属性且值包含xixi的span元素*/
+span[name|='xixi'] /*具有此属性且值等于xixi或以xixi-开头的span元素*/
+```
