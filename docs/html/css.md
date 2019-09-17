@@ -96,7 +96,17 @@ span[name] /*具有此属性的span元素*/
 span[name='xixi'] /*具有此属性且值等于xixi的span元素*/
 span[name^='xixi'] /*具有此属性且值以xixi开头的span元素*/
 span[name～='xixi'] /*具有此属性且值用空格为分隔符且其中一个值等于xixi的span元素*/
-span[name$='xixi'] /*具有此属性且值以xixi结尾的span元素*/
+span[name$='xixi'] /*具有此属结尾的span元素*/
 span[name*='xixi'] /*具有此属性且值包含xixi的span元素*/
 span[name|='xixi'] /*具有此属性且值等于xixi或以xixi-开头的span元素*/
+```
+
+## 同类选择器
+```css
+li:first-of-type {}
+```
+
+## 显式继承
+```css
+p{padding: inherit;}  /*强制继承父级该属性*/
 ```
