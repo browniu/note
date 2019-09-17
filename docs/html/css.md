@@ -98,3 +98,8 @@ span[name$='xixi'] /*具有此属性且值以xixi结尾的span元素*/
 span[name*='xixi'] /*具有此属性且值包含xixi的span元素*/
 span[name|='xixi'] /*具有此属性且值等于xixi或以xixi-开头的span元素*/
 ```
+
+## 同类选择器
+```css
+li:first-of-type {}
+```
