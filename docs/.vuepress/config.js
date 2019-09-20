@@ -19,7 +19,7 @@ module.exports = {
             // },
             {text: '逻辑', link: '/JavaScript/object'},
             {text: '静态', link: '/html/'},
-            {text: '工作流', link: '/workflow/git'},
+            {text: '效率', link: '/workflow/git'},
         ],
         sidebar: {
             '/JavaScript/': [
@@ -46,7 +46,8 @@ module.exports = {
             ],
             '/workflow/': [
                 'git',
-                'react'
+                'react',
+                'npm'
             ],
         },
         lastUpdated: '最后编辑',
