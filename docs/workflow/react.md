@@ -132,3 +132,13 @@ export default class ExampleComponent extends Component {
 }
 
 ```
+
+## Props 默认值
+```JavaScript
+//...
+static defaultProps = {
+    area: ['广东省', '珠海市', '香洲区']
+};
+//..
+render(){}
+```

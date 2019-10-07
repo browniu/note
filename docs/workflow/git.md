@@ -25,6 +25,12 @@ temp
 .idea
 ```
 
-## 测试持续集成
+## 持续集成
+
+```json
+"script":{
+  "deploy": "yarn build && gh-pages -d build"
+}
+```
 
 

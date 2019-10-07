@@ -9,8 +9,24 @@ navigator.getUserMedia // undefined
 ```
 
 
-### 鼠标坐标
+## 鼠标坐标
 
 ```javascript
 document.body.addEventListener('mousemove', (e) => console.log(print, e.screenX + ',' + e.screenY))
+```
+## 获取地理坐标
+
+```JavaScript
+getPos() {
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    position => {
+      this.pos = [position.coords.longitude, position.coords.latitude];
+    },
+    e => {
+      throw e.message;
+    }
+  );
+}
+}
 ```
