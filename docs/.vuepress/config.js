@@ -47,7 +47,8 @@ module.exports = {
             '/workflow/': [
                 'git',
                 'react',
-                'npm'
+                'npm',
+                'exam'
             ],
         },
         lastUpdated: '最后编辑',
