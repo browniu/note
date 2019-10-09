@@ -16,3 +16,17 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 
 ## 测试API
 * `https://jsonplaceholder.typicode.com/todos/1`
+
+## 跨域
+
+### JSONP
+
+#### 优点
+* 允许跨域
+* 兼容性高
+* 视图层与逻辑层分离
+
+#### 缺点
+* 只支持GET方式
+* 失败时无法返回状态码
+* 被劫持的风险高
