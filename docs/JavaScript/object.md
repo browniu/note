@@ -5,6 +5,8 @@
 Object.assign({name:'xixi',sex:'girl'},{age:18}) 
 // {name:'xixi',sex:'girl',age:18}
 ```
+## 遍历属性
+for-in 循环
 
 ## 对象转数组
 
