@@ -31,3 +31,10 @@ decodeURL('xixixi')
 ```JavaScript
 ' 123 '.trim() // '123'
 ```
+
+## 执行字符串逻辑
+```JavaScript
+const xixi = '嘻嘻嘻'
+const log = `console.log(${xixi})`
+eval(log) // 嘻嘻嘻
+```
