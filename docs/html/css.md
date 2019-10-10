@@ -122,3 +122,11 @@ p{
     text-overflow: ellipsis;
 }
 ```
+
+## Sass Prefix/前缀
+```scss
+$prefix: 'ui-';
+.#{$prefix}alert {
+  // code ...
+}
+```
