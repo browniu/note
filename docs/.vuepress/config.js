@@ -49,7 +49,8 @@ module.exports = {
                 'react',
                 'npm',
                 'exam',
-                'eslint'
+                'eslint',
+                'webpack'
             ],
         },
         lastUpdated: '最后编辑',
