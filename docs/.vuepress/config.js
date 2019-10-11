@@ -48,7 +48,8 @@ module.exports = {
                 'git',
                 'react',
                 'npm',
-                'exam'
+                'exam',
+                'eslint'
             ],
         },
         lastUpdated: '最后编辑',
