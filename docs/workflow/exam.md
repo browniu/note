@@ -70,6 +70,16 @@ DomTree > CSSomTree > renderTree
 * 服务端发送一个请求断开的包（我也挂了）
 * 客户端发送一个确认断开的包（好的）
 
+### 深拷贝
+深拷贝是指源对象和拷贝对象相互独立，其中任何一个发生变化都不会对对方产生影响。深浅拷贝最根本的区别就是是否真正获取到一个对象的复制实体，而不是引用。深拷贝在内存中新建了复制体的存储，而浅拷贝只是引用了源头的内存地址。
+* 使用JSON `b=JSON.parse(JSON.sringify(a))` 
+* 递归遍历属性
+
+
+### 数据类型
+* 基本：`undefined` `null` `string` `number` `boolean`
+* 引用：`object` `array` `function`
+
 ## 书籍推荐
 
 ### HTML与CSS进阶指南
