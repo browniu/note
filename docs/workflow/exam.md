@@ -45,6 +45,12 @@
 ### BFC
 `positon:absolute/fixed` / `display:inline-block/table` / `float:left/right` / `overflow!=visiblle`
 
+### 网页渲染的流程
+DomTree > CSSomTree > renderTree 
+
+### 纯函数
+如果函数的调用参数完全相同，则永远返回相同的结果。它不依赖程序执行期间的函数外部的任何状态，不产生任何可观察的副作用（状态交互），便于测试和重构。
+
 ## 书籍推荐
 
 ### HTML与CSS进阶指南
