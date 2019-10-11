@@ -42,6 +42,9 @@
 ### 闭包
 闭包的实质是因为函数嵌套而形成的作用域。即函数A内部有一个函数B，函数B可以访问A中的变量，B就是一个闭包。
 
+### BFC
+`positon:absolute/fixed` / `display:inline-block/table` / `float:left/right` / `overflow!=visiblle`
+
 ## 书籍推荐
 
 ### HTML与CSS进阶指南
