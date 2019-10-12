@@ -25,7 +25,7 @@ temp
 .idea
 ```
 
-## [TravisCI持续集成](https://travis-ci.org/browniu/note)
+## [TravisCI 持续集成](https://travis-ci.org/browniu/note)
 
 ```yml
 #.travis.yml
