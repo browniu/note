@@ -1,4 +1,4 @@
-# 字符串
+# 字符串 String
 
 ## 轮询字符串
 ```javascript
