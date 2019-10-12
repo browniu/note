@@ -43,7 +43,13 @@
 `positon:absolute/fixed` / `display:inline-block/table` / `float:left/right` / `overflow!=visiblle`
 
 ## 网页渲染的流程
-DomTree > CSSomTree > renderTree 
+* 输入网址
+* DNS服务器解析IP
+* 建立TCP链接
+* 浏览器发送HTTP请求
+* 服务器返回资源
+* 浏览器载入并解析资源
+* 渲染DOM树/CSSOM/运行JS
 
 ## 纯函数
 如果函数的调用参数完全相同，则永远返回相同的结果。它不依赖程序执行期间的函数外部的任何状态，不产生任何可观察的副作用（状态交互），便于测试和重构。
@@ -82,11 +88,13 @@ DomTree > CSSomTree > renderTree
 * 都支持响应式和组件化
 * 都主要维护核心库，将其他功能如状态管理/路由等交给配套组件完成
 ### 差异点
+* 数据流 React是MVC单向数据流，Vue是MVVM双向数据流
+* React兼容性更好，支持IE8
 * React具有更加强大的社区生态
 * React对TS支持更高
 * Vue的组件优化更容易，组件的依赖是在渲染过程中自动追踪的，所以系统能精确知晓哪个组件确实需要被重渲染。
 * vue更接近传统的前端开发方式，模版/样式/逻辑代码结构更清晰，React主张用jsx表示一切，这赋予了React更高的灵活性，但是在某些情况下代码可读性不如Vue。
-* vue中的样式设置更加灵活，scope实现起来更加渐变
+* vue中的样式设置更加灵活，scope实现起来更加简便
 * Vue的指令更加丰富，使用成本更低，但是增加了学习成本
 * React具备更加完善的原生渲染能力和更好的生态支持
 * 两者相互借鉴，互相补充。如Mobx 实际上使用体验更接近vue，vue也可以支持jsx语法等等方面可以体现
@@ -110,6 +118,12 @@ MVVM包含三个部分Model、View、ViewModel。
   
 ## 优化网站性能
 * 减少HTTP请求数量
+* 闲时加载
+* WEBP图片压缩方案
+* 优化资源加载顺序
+* 减少重排性操作
+* 避免DOM操作
+
 
 ## React
 
@@ -125,6 +139,18 @@ MVVM包含三个部分Model、View、ViewModel。
 ### 高阶组件
 * 高阶组件是参数为组件，返回值为新组件的函数，是 React 中用于复用组件逻辑的一种设计模式
 * 装饰器是高阶组件的一种应用方式
+
+### ReactDiff
+* 把树形结构按照层级分解，只比较同级元素。
+* 通过给列表结构的每个单元添加的`Key`值进行区分同层次的子节点的比较。
+* React 只匹配相同名称的`Component`
+* 合并操作，调用`setState`方法的时候, React为其添加`dirty`标记，每一个循环结束React会检查所有标记`dirty`的组件进行重新绘制。
+* 可以重写 shouldComponentUpdate 提高 diff 的性能。
+
+### 异步`setState`
+* 保持内部的一致性，因为props只有在父级渲染完成后才能拿到，无法同步更新。
+* 性能优化，不阻塞当前操作
+* 异步可以后台更新
 
 ## Vue
 
