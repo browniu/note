@@ -67,7 +67,6 @@ DomTree > CSSomTree > renderTree
 * 使用JSON `b=JSON.parse(JSON.sringify(a))` 
 * 递归遍历属性
 
-
 ## 数据类型
 * 基本：`undefined` `null` `string` `number` `boolean`
 * 引用：`object` `array` `function`
@@ -91,6 +90,12 @@ DomTree > CSSomTree > renderTree
 * Vue的指令更加丰富，使用成本更低，但是增加了学习成本
 * React具备更加完善的原生渲染能力和更好的生态支持
 * 两者相互借鉴，互相补充。如Mobx 实际上使用体验更接近vue，vue也可以支持jsx语法等等方面可以体现
+
+## 常用状态码
+* 200 请求成功
+* 300 重定向，当客户端的请求引起了资源URI的变化时发送此状态码
+* 404 请求资源不存在
+* 500 服务器内部错误
 
 ## React
 
