@@ -53,3 +53,6 @@ on:
   branch: master
 
 ```
+
+## gh-page
+部署GitHub Page 时需要关闭多仓库同步
