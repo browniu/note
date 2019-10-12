@@ -105,12 +105,6 @@
 * 404 请求资源不存在
 * 500 服务器内部错误
 
-## MVVM
-MVVM包含三个部分Model、View、ViewModel。
-* Model代表数据模型，定义数据和业务逻辑
-* View代表视图，负责数据UI展示
-* ViewModel作为中间层负责监听Model中的数据改变然后控制View的更新
-
 ## 优化首屏加载
 * 将公用的JS库通过<script>标签进行CDN引入，减小bundleJS的体积
 * 分包加载/懒加载/闲时加载/预加载
@@ -156,6 +150,12 @@ MVVM包含三个部分Model、View、ViewModel。
 
 ### 双向绑定/响应式
 Vue通过数据劫持结合发布订阅模式来实现双向绑定的。当一个Vue实例被创建时，vue会遍历data选项的属性，用Object.defineProperty将他们转为getter/setter并且在内部追踪相关依赖，在属性被访问和修改时通知变化。
+
+### MVVM
+MVVM包含三个部分Model、View、ViewModel。
+* Model代表数据模型，定义数据和业务逻辑
+* View代表视图，负责数据UI展示
+* ViewModel作为中间层负责监听Model中的数据改变然后控制View的更新
 
 ## 书籍推荐
 
