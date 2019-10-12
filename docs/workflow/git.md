@@ -27,10 +27,32 @@ temp
 
 ## 持续集成
 
-```json
-"script":{
-  "deploy": "yarn build && gh-pages -d build"
-}
+```yml
+#.travis.yml
+
+language: node_js
+node_js:
+  - lts/*
+
+
+cache: yarn
+
+install:
+  - yarn install
+
+script:
+  - yarn build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: docs/.vuepress/dist
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+
+on:
+  branch: master
+
 ```
 
 
