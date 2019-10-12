@@ -34,7 +34,6 @@ language: node_js
 node_js:
   - lts/*
 
-
 cache: yarn
 
 install:
@@ -54,5 +53,3 @@ on:
   branch: master
 
 ```
-
-
