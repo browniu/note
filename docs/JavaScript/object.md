@@ -6,7 +6,6 @@ Object.assign({name:'xixi',sex:'girl'},{age:18})
 // {name:'xixi',sex:'girl',age:18}
 ```
 ## 遍历属性
-for-in 循环
 ```javascript
 if(name in person){console.log(persion.name)}
 ```
