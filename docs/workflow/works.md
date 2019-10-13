@@ -12,7 +12,7 @@
 * 掌握通过WebSocket与服务器建立实时通信连接的技术方案
 
 ### 技术亮点
-* 触摸交互逻辑：返回触摸点的位置上对应的Dom节点。`getBoundingClientRect` & `ElementFromPoint` 整合兼容方案
+* 触摸交互逻辑：返回触摸点的位置上对应的Dom节点。`offsetParent` & `getBoundingClientRect` & `ElementFromPoint` 整合兼容方案
 * 静态资源预加载逻辑。`Promise` & `new Image()`
 * 对象池。每次优先调用对象池中的元素，没有闲置对象时再创建新的元素。使用完毕的元素立即存入对象池。实现对象池的容量在满足交互峰值的前提下最小。
 * 音频处理。音效的重叠播放和音频元素的内存泄露问题。
