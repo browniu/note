@@ -37,7 +37,8 @@ module.exports = {
                 'fragment',
                 'math',
                 'storage',
-                'decorater'
+                'decorater',
+                'dom'
             ],
             '/html/': [
                 '',
