@@ -17,9 +17,18 @@ module.exports = {
             //         { text: 'workflow', link: '/workflow/git' },
             //     ]
             // },
-            {text: '逻辑', link: '/JavaScript/object'},
-            {text: '静态', link: '/html/'},
-            {text: '效率', link: '/workflow/git'},
+            {
+                text: '逻辑',
+                link: '/JavaScript/object'
+            },
+            {
+                text: '静态',
+                link: '/html/'
+            },
+            {
+                text: '效率',
+                link: '/workflow/git'
+            },
         ],
         sidebar: {
             '/JavaScript/': [
@@ -50,10 +59,10 @@ module.exports = {
                 'npm',
                 'exam',
                 'eslint',
-                'webpack'
+                'webpack',
+                'editor'
             ],
         },
         lastUpdated: '最后编辑',
     }
 };
-
