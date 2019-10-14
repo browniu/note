@@ -20,17 +20,12 @@
 ## vue-router Encode编码
 
 ### 项目描述
+因为在使用`react-router-dom`的过程中发现在路由传参`测试@哈哈/进度%40`时，无法正确接收。因为react-router会自动对参数部分采取`decodeURI`&`encodeURI`（这个API无法对/转译），这个时候`/`后面的会被解析成路径而造成数据不完整。
 
-* 因为在使用`react-router-dom`的过程中发现在路由传参`测试@哈哈/进度%40`时，无法正确接收。因为react-router会自动对参数部分采取`decodeURI`&`encodeURI`（这个API无法对/转译），这个时候`/`后面的会被解析成路径而造成数据不完整。这时可能会想在发送参数前对其进行`encodeURIcomponent`手动编码（这个API可以对包括/在内的更多特殊字符进行转译），然后在接收时使用`decodeURIcomponent`进行手动解码，然而react-router进行的编解码是自动的（无法阻止），所以就会对参数进行多次解码，如果参数中包含类转译字段（%40），在接收参数时就会把`%40`经过两次解码解码成`@`符号。
+这时可能会想在发送参数前对其进行`encodeURIcomponent`手动编码（这个API可以对包括/在内的更多特殊字符进行转译），然后在接收时使用`decodeURIcomponent`进行手动解码，然而react-router进行的编解码是自动的（无法阻止），所以就会对参数进行多次解码，如果参数中包含类转译字段（%40），在接收参数时就会把`%40`经过两次解码解码成`@`符号。
 
 ### 项目职责
 * 重构react-router的URI编码解码逻辑，解决参数中携带特殊符号的问题
 
 ### 技术亮点
-* 基于原生`encodeURI`增加了对于`encodeURIcomponent`支持转译的特殊字符进行手动转译
-
-```JavaScript
-//encode
-
-```
-* 经过观察vue-router源码发现其在进行URL传参时调用一个自定义的`encodeURIComponentPretty`方法。这个方法采用的方案是结合两种编码方式，优雅的解决了这个问题。
+* 基于原生`encodeURI`之上增加了对于`/[\/?#]/g`等对URI分割有影响的字符进行手动转译成16进制编码。
