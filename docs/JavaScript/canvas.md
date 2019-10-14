@@ -1,4 +1,4 @@
-# 画布绘图
+# Canvas 画布绘图
 
 ## 初始化
 ```javascript
@@ -16,10 +16,11 @@ tx.drawImage(img,10,10);
 ```
 ## 文本
 ```javascript
+ctx.font="40px Arial lighter";
 ctx.fillText('hello',0,0)
-```
+``` 
 
 ## 清除画面
 ```javascript
-ctx.fillRect(0, 0, cvs.height, cvs.width);
+ctx.clearRect(0, 0, cvs.height, cvs.width);
 ```
