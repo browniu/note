@@ -27,7 +27,7 @@
 * 重构react-router的URI编码解码逻辑，解决参数中携带特殊符号的问题
 
 ### 技术亮点
-* 基于原生`encodeURI`增加了对于
+* 基于原生`encodeURI`增加了对于`encodeURIcomponent`支持转译的特殊字符进行手动转译
 
 ```JavaScript
 //encode
