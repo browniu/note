@@ -10,6 +10,7 @@
 
 ```JavaScript
 [1,2,3].forEach(e=>log(e)) // 1 2 3
+for(item in [1,2,3]){console.log(item)}
 ```
 
 ## 数组转字符串
