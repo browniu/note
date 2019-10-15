@@ -66,8 +66,12 @@ function debounce(func, wait) {
 ## 获取伪元素内容
 
 ```JavaScript
-● 验证和总结出css+canvas混合开发游戏的方案
-● 原生JS实现碰撞检测、手势拖拽、粒子动画、帧动画控制等游戏相关算法
-● 调研游戏引擎环境，掌握Cocos2d的开发流程和优化
-● 掌握通过WebSocket与服务器建立实时通信连接的技术方案
+const domBeforeConText = dom => window.getComputedStyle(dom,':before')
 ```
+
+## 两点间距离
+```JavaScript
+const distance = (x0,y0,x1,y1) => Math.hypot(x1-x0,y1-y0)
+distance(1,1,2,3) // 2.23243..
+```
+
