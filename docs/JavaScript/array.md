@@ -46,3 +46,17 @@ new Set([1,2,3,1,4,1]) //[1,2,3,4]
 ```javascript
 [1,2,3].indexOf(2) //1
 ```
+
+## 清除无效值
+```javascript
+const compact = arr => arr.filter(Boolean)
+compact([0,1,'',3,'a',undefined,'b',null]) // [0,1,3,'a','b']
+```
+
+## 检查频率
+```javascript
+const countOccurences = (arr, val) => arr.reduce((a,v)=>(v === val ? a+1 : a),0)
+countOccurcences([1,1,1,2,2,3,3],1) // 3
+```
+
+
