@@ -56,3 +56,14 @@ on:
 
 ## gh-page
 部署GitHub Page 时需要关闭多仓库同步
+
+### 发布到指定仓库
+```javascript
+# dependencies
+const ghpages = require('gh-pages')
+
+ghpages.publish('build', {
+  branch: 'gh-pages',
+  repo: 'https://github.com/browniu/example.git'
+}, () => console.log('发布完成'))
+```
