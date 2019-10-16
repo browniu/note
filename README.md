@@ -3,5 +3,4 @@
 ## [NoteBook](https://browniu.github.io/note/)
 
 ![demo](./static/homepage.png)
-![demo](./static/homepage.gif)
 
