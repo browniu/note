@@ -99,3 +99,9 @@ const preload = (images) => {
 // 用例
 await preload(['a.jpg','b.jpg'])
 ```
+
+## 生成指定长度和范围的随机数组
+```JavaScript
+const randomIntArrayInRange = (min, max, n = 1) => Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+randomIntArrayInRange(12, 35, 10); // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
+```
