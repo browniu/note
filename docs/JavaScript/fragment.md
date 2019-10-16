@@ -75,3 +75,11 @@ const distance = (x0,y0,x1,y1) => Math.hypot(x1-x0,y1-y0)
 distance(1,1,2,3) // 2.23243..
 ```
 
+## 监听回车
+```JavaScript
+dom.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    console.log('回车')
+  }
+})
+```
