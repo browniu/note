@@ -83,3 +83,19 @@ dom.addEventListener('keyup', (e) => {
   }
 })
 ```
+
+## 图像队列预加载
+```JavaScript
+const preload = (images) => {
+  const core = (e) => {
+    new Promise(resolve => {
+      const img = new Image()
+      img.src = e
+      img.onload = resolve
+    })
+    return Promise.all(images.map(async img => core(img)))
+  }
+}
+// 用例
+await preload(['a.jpg','b.jpg'])
+```
