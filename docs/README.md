@@ -1,6 +1,6 @@
 ---
 home: true
-actionText: 立即执行 →
+actionText: 好记性不如 →
 actionLink: /JavaScript/object
 features:
 - title: 简洁至上
