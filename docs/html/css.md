@@ -10,6 +10,11 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   outline: none;
+  --green: #42b983;
+  --red: #f66;
+  --blue: #73abfe;
+  --title: #273849;
+  --text: #304455;
 }
 
 html,
@@ -85,12 +90,6 @@ font-family:Microsoft Yahei,'微软雅黑',Tahoma,'Helvetica Neue',Helvetica,'Pi
 * **MAC在前，WIN在后** 同上，MAC中的许多中文字体在window中没有预装，因此尽量将针对MAC的字体前置
 * **兜底字体** 使用系统默认且属于字体家族 **serif**（衬线） 和 **sans-serif**（非衬线） 的字体兜底，兼容旧的操作系统
 
-### 相关论述
-
-* [Web 字体 font-family 再探秘](https://juejin.im/post/5d5376b5e51d453c11684c3b#heading-8)
-* [你该知道的字体 font-family](https://github.com/chokcoco/iCSS/issues/6)
-* [如何优雅的选择字体(font-family)](https://segmentfault.com/a/1190000006110417)
-* [微软雅黑这样使用不侵权](https://www.zhihu.com/search?type=content&q=font-family%20%E7%89%88%E6%9D%83)
 
 ## 属性选择器
 ```css
