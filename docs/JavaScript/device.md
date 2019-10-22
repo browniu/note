@@ -30,3 +30,17 @@ if (navigator.geolocation) {
 }
 }
 ```
+
+## 微信全屏同层视频元素
+```html
+<video
+    style="width: 100vw; height: 100vh; object-fit: fill;"
+    x5-video-player-fullscreen="true"
+    x5-video-player-type="h5"
+    x5-video-orientation="landscape"
+    loop autoplay muted preload="auto"
+    airplay="allow"
+    -webkit-playsinline="true"
+    playsinline="true"
+    src="https://static.jx3.xoyo.com/gfsj/20181201/2plxj.mp4"></video>
+```
