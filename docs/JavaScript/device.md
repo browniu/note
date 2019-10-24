@@ -32,7 +32,7 @@ if (navigator.geolocation) {
 ```
 
 ## 微信全屏同层视频元素
-```html
+```JavaScript
 <video
     style="width: 100vw; height: 100vh; object-fit: fill;"
     x5-video-player-fullscreen="true"
@@ -43,4 +43,24 @@ if (navigator.geolocation) {
     -webkit-playsinline="true"
     playsinline="true"
     src="https://static.jx3.xoyo.com/gfsj/20181201/2plxj.mp4"></video>
+```
+
+## Webp判断
+```
+(function () {
+    function canUseWebP() {
+      var elem = document.createElement('canvas');
+      if (!!(elem.getContext && elem.getContext('2d'))) {
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+      }
+      return false;
+    }
+    var isSupport = canUseWebP();
+    var match = window.location.search.match(/__WEBP__=(\d)/);
+    if (match) {
+      isSupport = match[1] === '1'
+    }
+    var bodyClassName = document.body.className + ' ' + (isSupport ? 'webp' : 'no-webp');
+    document.body.className = bodyClassName;
+  }());
 ```
