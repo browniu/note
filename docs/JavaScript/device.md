@@ -46,7 +46,7 @@ if (navigator.geolocation) {
 ```
 
 ## Webp判断
-```
+```javascript
 (function () {
     function canUseWebP() {
       var elem = document.createElement('canvas');
