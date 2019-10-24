@@ -222,6 +222,28 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 ## webp
 * webpack 编译css生成两条background图片引用，由index.html头部的判断函数结果决定是否给body打上webp class，通过class确定调用那种类型的图片/img元素使用封装的img组件，在组件内判断src的值调用那种图片
 
+## call/apply/bind
+* fun.call(this,'xixi','haha') 参数由逗号隔开
+* func.apply(this,['xixi','haha']) 参数是一个数组
+* func.bind(this,['xixi','haha'])() 参数是一个数组，返回一个函数，需要手动执行
+
+## flex布局
+* justify-content：主轴项目对齐方式：between 两端对齐中间平均/around 全部平均间隔
+* align-items：交叉轴对齐方式：baseline 第一行文本基线/stretch 未设高度时撑满
+* align-content：多轴对齐方式
+* flex-grow：是否自动放大撑满剩余空间
+* flex-shrink：是否自动缩小剩余空间
+* flex-basis：自动分配剩余前项目占主轴的空间
+* align-self：允许项目有单独的交叉轴对齐方式
+
+## 合成函数
+两个纯函数组合成一个新函数compose
+* reduce可以作为一个高阶函数可以实现函数合成
+* 避免函数嵌套，提高代码可读性
+
+
+
+
 ## 前端框架比较
 ### 共相同
 * 都采用性能更高的虚拟Dom
@@ -286,6 +308,10 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 2.具体细节：它的工作除了要更新 this.state 之外，还要负责触发重新渲染，这里面要经过 React 核心 diff 算法，最终才能决定是否要进行重渲染，以及如何渲染。而且为了批次与效能的理由，多个 setState 呼叫有可能在执行过程中还需要被合并，所以它被设计成延时（异步表现）
 3.同步表现：在setTimeout中/参数是一个function
 
+### redux
+* 单一数据源：整个应用只存在一个store/便于同构-便于调试-实现撤销功能
+* state只读：所有修改只能通过action/ 便于集中化管理-顺序执行-便于调试
+* 使用纯函数进行修改：reducer 接收action和state，返回新的state/便于复用
 
 ### 工程模版优化
 * Px2REM 移动端适配/提高设计稿还原度
