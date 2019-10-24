@@ -216,13 +216,11 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * HTTP协议上的gzip编码是一种用来改进web应用程序性能的编码协议
 * 压缩比率在3到10倍左右，可以大大节省服务器的网络带宽
 
-<<<<<<< HEAD
 ## 阻塞
+* css不阻塞js阻塞，因为js可能会改变dom结构
 
-=======
 ## webp
 * webpack 编译css生成两条background图片引用，由index.html头部的判断函数结果决定是否给body打上webp class，通过class确定调用那种类型的图片/img元素使用封装的img组件，在组件内判断src的值调用那种图片
->>>>>>> 349a0f080ce50818d2023ed4e4550af21a027efd
 
 ## 前端框架比较
 ### 共相同
@@ -284,9 +282,9 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * 可以重写 shouldComponentUpdate 提高 diff 的性能。
 
 ### 异步`setState`
-1.异步原因：保持内部的一致性，因为props只有在父级渲染完成后才能拿到，无法同步更新/性能优化，不阻塞当前操作
-2.细节：事实上，setState 方法与包含在其中的执行是一个很复杂的过程，它的工作除了要更新 this.state 之外，还要负责触发重新渲染，这里面要经过 React 核心 diff 算法，最终才能决定是否要进行重渲染，以及如何渲染。而且为了批次与效能的理由，多个 setState 呼叫有可能在执行过程中还需要被合并，所以它被设计以延时的来进行执行是相当合理的。
-在 React 的 setState 函数实现中，会根据一个变量 isBatchingUpdates 判断是直接更新 this.state 还是放到队列中回头再说，而 isBatchingUpdates 默认是 false，也就表示 setState 会同步更新 this.state，但是，有一个函数 batchedUpdates，这个函数会把 isBatchingUpdates 修改为 true，而当 React 在调用事件处理函数之前就会调用这个 batchedUpdates，造成的后果，就是由 React 控制的事件处理过程 setState 不会同步更新 this.state。
+1.异步原因：合并执行，优化重新渲染机制的效率
+2.具体细节：它的工作除了要更新 this.state 之外，还要负责触发重新渲染，这里面要经过 React 核心 diff 算法，最终才能决定是否要进行重渲染，以及如何渲染。而且为了批次与效能的理由，多个 setState 呼叫有可能在执行过程中还需要被合并，所以它被设计成延时（异步表现）
+3.同步表现：在setTimeout中/参数是一个function
 
 
 ### 工程模版优化
