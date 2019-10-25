@@ -318,6 +318,10 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * 单一数据源：整个应用只存在一个store/便于同构-便于调试-实现撤销功能
 * state只读：所有修改只能通过action/ 便于集中化管理-顺序执行-便于调试
 * 使用纯函数进行修改：reducer 接收action和state，返回新的state/便于复用
+* 通过connect方法连接 React 组件与 Redux store
+
+### react-context
+实现跨层级的组件数据传递
 
 ### 工程模版优化
 * Px2REM 移动端适配/提高设计稿还原度
