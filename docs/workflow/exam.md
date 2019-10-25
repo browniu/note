@@ -187,6 +187,7 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * display: flex;align-items: center;
 * transform & top
 * padding:15px 0
+* flex:1 (所有弹性盒模型对象都有相同高度，且平分弹性盒)
 
 ## 浏览器的构成部分
 * 用户界面：地址栏/前后按钮/书签目录等
@@ -238,6 +239,7 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * flex-shrink：是否自动缩小剩余空间
 * flex-basis：自动分配剩余前项目占主轴的空间
 * align-self：允许项目有单独的交叉轴对齐方式
+* flex:1 所有项目平分弹性盒子
 
 ## 合成函数
 两个纯函数组合成一个新函数compose
@@ -247,6 +249,10 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 ## AST生成代码段
 * acorn：代码段生成AST
 * astring：AST生成代码
+
+## 防抖截流
+* 防抖：多次触发间隔足够大时执行，绝对执行最后一次触发
+* 截流：多次触发周期响应一次
 
 ## 前端框架比较
 ### 共相同
@@ -302,7 +308,7 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * 通过减少继承Component而来的生命周期函数而达到性能优化的效果。
 * 因为没有shouldComponentUpdate生命周期函数，所以每次state更新，它都会重新绘制render函数。
 
-### 高阶组件
+### 高阶组件(HOC)
 * 高阶组件是参数为组件，返回值为新组件的函数，是 React 中用于复用组件逻辑的一种设计模式
 * 装饰器是高阶组件的一种应用方式
 
@@ -330,6 +336,9 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 ### react-context
 实现跨层级的组件数据传递，但是官方并不推荐，试验性而且不可靠，需要进行控制
 
+### 代码分片
+组件/路由：分包加载/异步加载/按需加载
+
 ### 工程模版优化
 * Px2REM 移动端适配/提高设计稿还原度
 * WebP 图片格式转换 优化资源大小/提交页面加载速度
@@ -337,6 +346,27 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * JSONP 请求的拦截，上报发送参数和接收数据/便于移动端调试
 * 禁用橡皮筋 移动端适配全屏应用或不出现滚动条时禁用橡皮筋效果
 * travisCI 持续集成化部署
+
+### 生命周期
+
+1.创建阶段
+    * getDefaultProps
+    * getInitialState
+    * componentWillMount
+    * render
+    * componentDidMount
+2.运行阶段（多次运行）
+    * static getDerivedStateFromProps(nextProps,prevState)(新增) 从props更新state
+    * componentWillReceiveProps
+    * shouldComponentUpdate
+    * componentWillUpdate
+    * getSnapshotBeforeUpdate(prevProps,prevState)(新增) 渲染之后可以获取但无法操作时
+    * render
+    * componentDidUpDate 
+    * static getDerivedStateFromError(error)(新增) 生命周期构造时捕获错误
+    * componentDidCatch(error,info)(新增) 任意JS错误捕获
+3.销毁阶段
+    * componentWillUnmount
 
 ## Vue
 
