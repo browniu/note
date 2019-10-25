@@ -319,6 +319,7 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * state只读：所有修改只能通过action/ 便于集中化管理-顺序执行-便于调试
 * 使用纯函数进行修改：reducer 接收action和state，返回新的state/便于复用
 * 通过connect方法连接 React 组件与 Redux store
+* UI 组件负责 UI 的呈现，容器组件负责管理数据和逻辑，用户提供UI组件，容器组件由react-redux自动生成
 
 ### react-context
 实现跨层级的组件数据传递
