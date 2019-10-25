@@ -320,6 +320,8 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * 使用纯函数进行修改：reducer 接收action和state，返回新的state/便于复用
 * React-Redux 提供connect方法，用于从 UI 组件生成容器组件。connect的意思，就是将这两种组件连起来
 * UI 组件负责 UI 的呈现，容器组件负责管理数据和逻辑，用户提供UI组件，容器组件由react-redux自动生成
+* mapStateToProps 输出逻辑：建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系
+* Provider包在在根组件外面，所有子组件就默认都可以拿到state。它的原理是React组件的context属性
 
 ### react-context
 实现跨层级的组件数据传递
