@@ -61,8 +61,9 @@ es6引入了class、extends 的继承方式（基于原型继承，将子类的�
 * 私有变量
 * 回调函数
 
-## BFC
-`positon:absolute/fixed` / `display:inline-block/table` / `float:left/right` / `overflow!=visiblle`
+## BFC格式化上下文
+* 生成：`positon:absolute/fixed` / `display:inline-block/table` / `float:left/right` / `overflow!=visiblle`
+* 机制：垂直方向的margin重叠/内部元素不影响外界/不与浮动元素重叠/计算浮动子元素的高度
 
 ## 网页渲染的流程
 * 输入网址
@@ -165,9 +166,10 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * ES6其实包含ES2015/ES2016/ES2017/ES2018等
 * let和const/模版字符串/箭头函数/symbol/Set/Map类型/for of 遍历/Promise/Async/Class/解构赋值/展开运算符等
 
-## 事件模型
+## 事件模型（事件流）
 * DOM0级模型：事件不会传播，没有事件流
 * DOM2级模型：捕获阶段-自上而下/冒泡阶段-自下而上/处理阶段-到达目标元素的监听函数
+* 事件流：捕获阶段》处理阶段》冒泡阶段
 
 ## 浏览器兼容性
 * 样式兼容性 默认状态-clear.css/CSS3属性-前缀
@@ -274,6 +276,7 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * Vue的指令更加丰富，使用成本更低，但是增加了学习成本
 * React具备更加完善的原生渲染能力和更好的生态支持
 * 两者相互借鉴，互相补充。如Mobx 实际上使用体验更接近vue，vue也可以支持jsx语法等等方面可以体现
+
 
 ## 常用状态码
 * 200 请求成功
