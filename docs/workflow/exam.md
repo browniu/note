@@ -305,6 +305,9 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * 初始值（声明时就必须赋值）const
 * 块级作用域（再任意{}代码块中都会形成私有作用域）let/const
 
+## url的hash(#)
+* 不刷新页面时添加浏览器历史记录
+
 ## React
 
 ### 组件控制
@@ -333,13 +336,22 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 3.同步表现：在setTimeout中/参数是一个function
  
 ### redux
+1.三大原则
 * 单一数据源：整个应用只存在一个store/便于同构-便于调试-实现撤销功能
 * state只读：所有修改只能通过action/ 便于集中化管理-顺序执行-便于调试
-* 使用纯函数进行修改：reducer 接收action和state，返回新的state/便于复用
-* React-Redux 提供connect方法，用于从 UI 组件生成容器组件。connect的意思，就是将这两种组件连起来
-* UI 组件负责 UI 的呈现，容器组件负责管理数据和逻辑，用户提供UI组件，容器组件由react-redux自动生成
-* mapStateToProps 输出逻辑：建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系
+* 使用纯函数进行修改：reducer接收action和state，返回新的state/便于复用
+
+2.连接
+* 通过在根元素外包裹<Provider>在任意子组件使用connect方法将store与组件建立连接(connect(mapStateToProps,mapDispatchToProps)(Home))
 * Provider包在在根组件外面，所有子组件就默认都可以拿到state。它的原理是React组件的context属性
+* mapStateToProps(组件props与store.state建立映射关系)：传入(state,ownProps)返回{data:state.xx}监听store（以及props）的变化，实时更新映射关系
+* mapDispatchToProps（组件props与store.dispatch建立映射关系）传入函数可获取dispatch进行指定行为的action派发改变对应的store.state
+
+### react-router
+路由的意义是通过URL动态加载组件，react-router基于history的三大模式（BrowserRouter，HashRouter，createMemoryHistory）
+* BrowserRouter 使用浏览器中的 History API (pathname字段)用于处理 URL，创建一个像example.com/some/path这样真实的 URL，服务器需要增加处理URL的配置
+* HashRouter 用 URL 中的 hash（#）字段去创建路由
+* createMemoryHistory URL  地址栏不会变动，不能通过改变URL定位页面
 
 ### react-context
 实现跨层级的组件数据传递，但是官方并不推荐，试验性而且不可靠，需要进行控制

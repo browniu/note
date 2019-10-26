@@ -143,4 +143,61 @@ static defaultProps = {
 render(){}
 ```
 
+## Redux 异步请求
+
+### 初始化reducer
+```JavaScript
+import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+
+const postReducer = function (state = {list: [{title: 'hello'}]}, action) {
+    switch (action.type) {
+        case 'LOAD': {
+
+            return {
+                ...state, list: action.payload
+            }
+        }
+        case 'POST':
+            return {
+                ...state, list: action.payload
+            }
+        default:
+            return state
+    }
+}
+
+```
+### 合并reducer
+```JavaScript
+const rootReducer = combineReducers({
+    counter: counterReducer,
+    post: postReducer
+})
+```
+### 初始化仓库（使用中间件）
+```JavaScript
+const store = createStore(
+    postReducer, /* preloadedState, */
+    compose(
+        applyMiddleware(...[thunk]),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    ),
+    )
+;
+```
+### 派发
+```JavaScript
+    store.dispatch(async function (dispatch) {
+        const result = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => json)
+        console.log(result)
+        dispatch({
+            type: 'LOAD',
+            payload: result
+        })
+    })
+```
+
 
