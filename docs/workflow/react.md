@@ -297,4 +297,32 @@ const Sub = () => {
 }
 ```
 
+### 自定义Hooks
+```JavaScript
+function useVSize() {
+    const [size, setSize] = useState({
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight
+    })
+
+    const resize = useCallback(() => {
+        setSize({
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight
+        })
+    })
+    useEffect(() => {
+        window.addEventListener('resize', resize)
+        return () => {
+            window.removeEventListener('resize', resize)
+        }
+    }, [])
+    return size
+}
+```
+```JavaScript
+//component.js
+const size = useVSize()
+```
+
 

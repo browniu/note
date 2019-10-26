@@ -365,7 +365,10 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 * 生命周期（willUnMount）useEffect(func,[]) 第二参数为空数组可检测卸载组件
 * 后代传值 Context = createContext()》<Context><Child /></Context>》child=()=>{const value =useContext(Context)}
 * 动作派发 useReducer 可以实现多种对值处理动作的派发
-
+* 使用后代传值&动作派发组合为HooksRedux
+* 生命周期(shouldComponentUpdate) useMemo 可以为render内函数指定触发条件
+* useRef 获取DOM/保存变量
+* useExample 创建自定义hooks
 
 ### 工程模版优化
 * Px2REM 移动端适配/提高设计稿还原度
