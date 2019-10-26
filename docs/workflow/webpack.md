@@ -17,3 +17,39 @@ module.exports = {
 
 ```
 
+## @路径
+```JavaScript
+//...
+extensions:[/**/],
+alias: {
+    '@':path.join(__dirname,'../src'),
+    //...
+}
+```
+
+## 省略后缀
+```JavaScript
+extensions:['js','json','jsx']
+```
+
+## antd 按需加载
+```bash
+yarn add antd babel-plugin-import -D
+```
+```JavaScript
+// .babelrc or babel-loader option
+{
+  "plugins": [
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": "css" // `style: true` 会加载 less 文件
+    }]
+  ]
+}
+```
+```JavaScript
+//app.js
+import {button} from 'antd'
+```
+

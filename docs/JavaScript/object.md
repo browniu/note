@@ -25,3 +25,16 @@ Object.values({a:'xixi',b:'haha'}) // ['xixi','haha']
 ```JavaScript
 const copy = JSON.parse(JSON.stringify(obj));
 ```
+
+## 对象展开(深拷贝)
+```JavaScript
+const obj1 = {
+    name: 'xixi',
+    aga: 1
+};
+
+const obj2 = {
+    sex: 'boy',
+    ...obj1
+};
+```

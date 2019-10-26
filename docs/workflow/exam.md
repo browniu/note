@@ -19,7 +19,7 @@ JS就是基于原型的语言。每个对象都有一个原型，对象以原型
 
 ### 分离组合继承（寄生）
 构造函数属性继承和建立子类和父类原型的链接，分离就是分两步走；组合是指同时继承子类构造函数和原型中的属性
-* 这里用到了Object.creat(obj)方法，该方法会对传入的obj对象进行浅拷贝。将父类原型复制给了子类原型。
+* 这里用到了Object.creat(xobj)方法，该方法会对传入的obj对象进行浅拷贝。将父类原型复制给了子类原型。
 * 优点是在子类构造函数中继承了父类的属性/子类原型和父类原型建立了连接
 
 ### ES6继承
@@ -138,9 +138,10 @@ es6引入了class、extends 的继承方式（基于原型继承，将子类的�
 * 高阶函数/函数作为实参，返回一个新函数
 * 柯里化/将一个完整的运算过程分解成多个函数调用 参数复用/提前判断/延迟触发
 
-## 模块化
-高内聚-低耦合
-不同功能模块之间的依赖关系应该简单清晰，也就是保持模块之间的低耦合性；一个模块应该把自己的功能封装好，让外界不要太依赖于自己内部的状态，这样不会因为内部的变化而影响外部模块的功能，也就是高内聚性
+## 模块化/组件化（）
+* 高内聚/低耦合：不同功能模块之间的依赖关系应该简单清晰/封装自己的状态不影响外部
+* 可复用性/代码可读性/可维护性/可拓展性
+* 模块化是对代码组织而言/组件化是对UI界面而言
 
 ## Promise
 为了解决异步编程时出现回调多层嵌套的问题。提高代码的可读性和可维护性。
@@ -268,7 +269,7 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 ### 差异点
 * 数据流 React是MVC单向数据流，Vue是MVVM双向数据流
 * React兼容性更好，支持IE8
-* React具有更加强大的社区生态
+* React具有更加强大的社区生态/开发团队技术实力
 * React对TS支持更高
 * Vue的组件优化更容易，组件的依赖是在渲染过程中自动追踪的，所以系统能精确知晓哪个组件确实需要被重渲染。
 * vue更接近传统的前端开发方式，模版/样式/逻辑代码结构更清晰，React主张用jsx表示一切，这赋予了React更高的灵活性，但是在某些情况下代码可读性不如Vue。
@@ -357,23 +358,28 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 ### 生命周期
 
 1.创建阶段
-    * getDefaultProps
-    * getInitialState
-    * componentWillMount
-    * render
-    * componentDidMount
+* constructor (getInitialState)
+* static getDerivedStateFromProps(nextProps,prevState)(新增) 从props更新state
+* componentWillMount (废除)
+* render
+* componentDidMount
+
 2.运行阶段（多次运行）
-    * static getDerivedStateFromProps(nextProps,prevState)(新增) 从props更新state
-    * componentWillReceiveProps
-    * shouldComponentUpdate
-    * componentWillUpdate
-    * getSnapshotBeforeUpdate(prevProps,prevState)(新增) 渲染之后可以获取但无法操作时
-    * render
-    * componentDidUpDate 
-    * static getDerivedStateFromError(error)(新增) 生命周期构造时捕获错误
-    * componentDidCatch(error,info)(新增) 任意JS错误捕获
+* static getDerivedStateFromProps(nextProps,prevState)(新增) 从props更新state
+* componentWillReceiveProps（废除）
+* shouldComponentUpdate
+* componentWillUpdate（废除）
+* render
+* getSnapshotBeforeUpdate(prevProps,prevState)(新增) 渲染之后可以获取但无法操作时
+* componentDidUpDate 
+
 3.销毁阶段
-    * componentWillUnmount
+* componentWillUnmount
+
+4.错误边界
+* static getDerivedStateFromError(error)(新增) 生命周期构造时捕获错误/渲染备用组件
+* componentDidCatch(error,info)(新增) 任意JS错误捕获/打印错误信息
+* 无法捕获的错误：事件处理/异步操作/服务端渲染/自身异常
 
 ## Vue
 
