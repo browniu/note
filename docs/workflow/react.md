@@ -200,4 +200,101 @@ const store = createStore(
     })
 ```
 
+## Hooks
+
+### 后代传值
+```JavaScript
+const CountContext = createContext()
+//...
+render(){
+    <CountContext.Provider value={count}>
+        <Sub />
+    </CountContext.Provider>
+}
+//...
+const Sub = () => {
+    const count = useContext(CountContext)
+    return (<div>我是小组件{count}</div>)
+}
+```
+
+### 动作派发
+```JavaScript
+function HooksReducer() {
+    const [num, dispatch] = useReducer((state, action) => {
+        if (action === 'PLUS') return state + 1
+        if (action === 'REDU') return state - 1
+        return state
+    }, 0)
+    return (
+        <div>
+            <div>我是小小组件 {num}</div>
+            <div>
+                <button onClick={() => dispatch('PLUS')}>+</button>
+                <button onClick={() => dispatch('PLUS')}>-</button>
+            </div>
+        </div>
+    )
+}
+```
+
+### 实现HooksRedux
+
+#### store
+```JavaScript
+// redux.js
+import React, {createContext, useReducer} from 'react'
+
+const reducer = (state, action) => {
+    if (action.type === 'RED') return action.value
+    if (action.type === 'YELLOW') return action.value
+    return state
+}
+
+export const Context = createContext({})
+
+export const ShareContext = props => {
+    const [color, dispatch] = useReducer(reducer, 'green')
+    return (
+        <Context.Provider value={{color, dispatch}}>
+            {props.children}
+        </Context.Provider>
+    )
+}
+```
+#### components
+```JavaScript
+// main.js
+import React, {useContext} from 'react'
+import {Context, ShareContext} from './redux'
+
+export default function Redux() {
+    return (
+        <div>
+            <ShareContext>
+                <h4>Redux</h4>
+                <Buttons/>
+                <Sub/>
+            </ShareContext>
+        </div>
+    )
+}
+
+const Buttons = () => {
+    const {dispatch} = useContext(Context)
+    return (<div>
+        <button onClick={() => dispatch({type: 'RED', value: 'red'})}>变红</button>
+        <button onClick={() => dispatch({type: 'YELLOW', value: 'yellow'})}>变黄</button>
+    </div>)
+}
+
+const Sub = () => {
+    const {color} = useContext(Context)
+    console.log(color)
+    return (<div style={{color}}>
+        我是副标题组件,{color}
+    </div>)
+}
+```
+
 

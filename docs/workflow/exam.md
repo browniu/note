@@ -359,6 +359,14 @@ ES7提出的关于异步操作的终极方案。相较于其他异步方案 `asy
 ### 代码分片
 组件/路由：分包加载/异步加载/按需加载
 
+### Hooks
+* [值,改变值的方法] = useState
+* 生命周期（didUpdate）useEffect(()=>{}) 改变值的回调
+* 生命周期（willUnMount）useEffect(func,[]) 第二参数为空数组可检测卸载组件
+* 后代传值 Context = createContext()》<Context><Child /></Context>》child=()=>{const value =useContext(Context)}
+* 动作派发 useReducer 可以实现多种对值处理动作的派发
+
+
 ### 工程模版优化
 * Px2REM 移动端适配/提高设计稿还原度
 * WebP 图片格式转换 优化资源大小/提交页面加载速度
