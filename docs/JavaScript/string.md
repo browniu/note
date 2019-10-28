@@ -38,3 +38,11 @@ const xixi = '嘻嘻嘻'
 const log = `console.log(${xixi})`
 eval(log) // 嘻嘻嘻
 ```
+## 逆序
+```JavaScript
+const stringReverse(string){
+  let result =[]
+  for(i in string) result.push(string[string.length-1-i])
+  return result
+}
+```
