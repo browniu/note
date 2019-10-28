@@ -1,9 +1,32 @@
 # 数组 Array
 
+## 判定
+```JavaScript
+Array.isArray(array)
+```
+
 ## 拼接
 
 ```JavaScript
 [1,2,3].concat([4,5,6]) //[1,2,3,4,5,6]
+```
+## 扁平化
+
+```JavaScript
+function arrayFlat(array) {
+    let result = [].concat(...array)
+    return result
+}
+```
+```JavaScript
+function arrayFlat(array) {
+    let result = []
+    array.forEach(item => {
+        if (Array.isArray(item)) result = result.concat(arrayFlat(item))
+        else result.push(item)
+    })
+    return result
+}
 ```
 
 ## 遍历
