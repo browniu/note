@@ -1,5 +1,19 @@
 # 数组 Array
 
+## 去重
+```JavaScript
+Array.from(new Set(array))
+```
+```JavaScript
+const arrayQc(array)=>{
+    let result = []
+    array.sort()
+    for(i in array){
+        array[i]!==array[i-1] && result.push(array[i])
+    }
+    return result
+}
+```
 ## 判定
 ```JavaScript
 Array.isArray(array)
