@@ -325,4 +325,10 @@ function useVSize() {
 const size = useVSize()
 ```
 
+## 生命周期优化
+```JavaScript
+shouldComponentUpdate(nextProps, nextState) {
+return !(nextProps.content !== this.props.content)
+}
+```
 

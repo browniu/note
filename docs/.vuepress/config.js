@@ -47,7 +47,9 @@ module.exports = {
                 'math',
                 'storage',
                 'decorater',
-                'dom'
+                'dom',
+                'designMode',
+                'proto'
             ],
             '/html/': [
                 '',
