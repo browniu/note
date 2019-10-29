@@ -10,3 +10,9 @@ const a = {
 }
 console.log(a)
 ```
+## 运行时间监测
+```JavaScript
+console.time('test')
+test()
+console.tiemEnd('test')
+```
