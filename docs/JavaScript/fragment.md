@@ -32,21 +32,23 @@ preloadCore(src) {
 ```
 
 ## 截流
-阻止触发，周期内响应一次
+周期内响应一次
 
 ```javascript
-function throttle(func, wait) {
-    let previous = 0;
-    return function () {
-        const now = Date.now();
-        const context = this;
-        const args = arguments;
-        if (now - previous > wait) {
-            func.apply(context, args);
-            previous = now
+const throttle(fun,delay)=>{
+    let lastTime = 0
+    return function(){
+        let nowTime = Date.now()
+        if(nowTime-lastTime>delay){
+            fun()
+            lastTime=nowTime
         }
     }
 }
+// 注意使用方式
+window.onclick=throttle(()=>{
+    console.log('click me!')
+},1000)
 ```
 
 ## 防抖
