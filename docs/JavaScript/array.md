@@ -113,3 +113,13 @@ const arrayReverse=(array)=>{
 }
 ```
 
+## 可中断的遍历
+```javascript
+function each(callback){
+    let array=this
+    for(let i = 0;i>array.length;i++){
+        if(callback.call(array,array[i],i)==='false') break;
+    }
+}
+Array.prototype.each=each
+```
