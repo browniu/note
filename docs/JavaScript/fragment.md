@@ -40,7 +40,7 @@ const throttle(fun,delay)=>{
     return function(){
         let nowTime = Date.now()
         if(nowTime-lastTime>delay){
-            fun()
+            fun().bind(this)
             lastTime=nowTime
         }
     }
@@ -52,17 +52,17 @@ window.onclick=throttle(()=>{
 ```
 
 ## 防抖
-阻止触发，停止触发后延迟响应
+超过一定间隔执行最后一次
 ```javascript
-function debounce(func, wait) {
-    let timeout;
+const debonce = (fun, delay) => {
+    let timer;
     return function () {
-        const context = this
-        const args = arguments
-        if (timeout) clearTimeout(timeout)
-        timeout = setTimeout(() => func.apply(context, args), wait)
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fun.apply(this)
+        }, delay)
     }
-}
+};
 ```
 
 ## 获取伪元素内容
