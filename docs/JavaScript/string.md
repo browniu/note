@@ -46,3 +46,13 @@ const stringReverse(string){
   return result
 }
 ```
+
+## 截取
+### 单个
+```JavaScript
+string.charAt(1)
+```
+### 片段
+```JavaScript
+string.substr(1,3)
+```
