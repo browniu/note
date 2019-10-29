@@ -97,5 +97,19 @@ compact([0,1,'',3,'a',undefined,'b',null]) // [0,1,3,'a','b']
 const countOccurences = (arr, val) => arr.reduce((a,v)=>(v === val ? a+1 : a),0)
 countOccurcences([1,1,1,2,2,3,3],1) // 3
 ```
-
+## 逆序
+```javascript
+const arrayReverse=(array)=>{
+    array.forEach((e,i)=>{
+        const l = array.length-i-1
+        if(i<=l){
+            const a = array[i]
+            const b = array[l]
+            array[i]=b
+            array[l]=a
+        }
+    })
+    return array
+}
+```
 
