@@ -52,7 +52,7 @@ yarn add antd babel-plugin-import -D
 //app.js
 import {button} from 'antd'
 ```
-## 使用async异步
+## 使用async/await语法
 ```JavaScript
 //.babelrc
 {
@@ -73,5 +73,10 @@ const Works = lazy(() => import('./pages/works'));
 //...
  <Route path={'/works'} render={AsyncComponent(Works)}/>
 //...
+```
+
+## 分包预加载
+```JavaScript
+const Works = lazy(() => import(/* webpackPrefetch: true */'./pages/works'));
 ```
 
