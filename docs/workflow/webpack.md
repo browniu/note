@@ -52,4 +52,11 @@ yarn add antd babel-plugin-import -D
 //app.js
 import {button} from 'antd'
 ```
+## 使用async异步
+```JavaScript
+//.babelrc
+{
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
+```
 
