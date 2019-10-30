@@ -59,4 +59,19 @@ import {button} from 'antd'
   "plugins": ["@babel/plugin-transform-runtime"]
 }
 ```
+## React路由分片
+```JavaScript
+//.babelrc
+function AsyncComponent(Component) {
+    return props => (
+        <Suspense fallback={<div>...</div>}>
+            <Component {...props} />
+        </Suspense>
+    );
+}
+const Works = lazy(() => import('./pages/works'));
+//...
+ <Route path={'/works'} render={AsyncComponent(Works)}/>
+//...
+```
 
