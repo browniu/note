@@ -16,3 +16,8 @@ console.time('test')
 test()
 console.tiemEnd('test')
 ```
+
+## 照妖镜
+```JavaScript
+Object.prototype.toString.call('xixi') // String
+```
