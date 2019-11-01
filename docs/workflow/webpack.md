@@ -52,6 +52,7 @@ yarn add antd babel-plugin-import -D
 //app.js
 import {button} from 'antd'
 ```
+
 ## 使用async/await语法
 ```JavaScript
 //.babelrc
@@ -59,6 +60,7 @@ import {button} from 'antd'
   "plugins": ["@babel/plugin-transform-runtime"]
 }
 ```
+
 ## React路由分片
 ```JavaScript
 //.babelrc
