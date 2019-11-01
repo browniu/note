@@ -123,3 +123,11 @@ function each(callback){
 }
 Array.prototype.each=each
 ```
+
+## 清空队列
+```javascript
+let queue =[1,2,3,4]
+switch(queue.shift()){
+    console.log(queue)
+}
+```
