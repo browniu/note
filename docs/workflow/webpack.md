@@ -76,6 +76,15 @@ const Works = lazy(() => import('./pages/works'));
  <Route path={'/works'} render={AsyncComponent(Works)}/>
 //...
 ```
+```JavaScript
+//.babelrc
+{
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
+```
 
 ## 分包预加载
 ```JavaScript
