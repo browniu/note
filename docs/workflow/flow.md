@@ -96,4 +96,51 @@ touch index.js/index.hbs
 touch styles.less
 ```
 
+## 文件生成脚手架
+
+### 配置
+```bash
+touch cli.js
+chmod 755 cli.js
+```
+
+### 主程序
+```JavaScript
+// cli.js
+#!/usr/bin/env node
+const fs = require('fs')
+const path = require('path')
+const inquirer = require('inquirer')
+const ejs = require('ejs')
+// 交互询问
+inquirer.prompt([
+    {
+        type: 'input',
+        name: 'name',
+        message: '你叫啥啊？',
+        default: 'browniu'
+    },
+    {
+        type: 'input',
+        name: 'sex',
+        message: '你是男是女？',
+        default: 'boy'
+    }
+]).then(answer => { // 询问结果
+    const templateDir = path.join(__dirname, 'templates')
+    const destDir = path.join(process.cwd(), 'dist')
+    // 读取模版文件目录
+    fs.readdir(templateDir, (err, files) => {
+        if (err) throw err
+        files.forEach(file => {
+            // 渲染模版文件
+            ejs.renderFile(path.join(templateDir, file), answer, (err, result) => {
+                if (err) throw err
+                // 写入文件
+                fs.writeFileSync(path.join(destDir, file), result)
+            })
+        })
+    })
+})
+```
 
