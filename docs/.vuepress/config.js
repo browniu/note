@@ -63,7 +63,8 @@ module.exports = {
                 'exam',
                 'eslint',
                 'webpack',
-                'editor'
+                'editor',
+                'flow'
             ],
         },
         lastUpdated: '最后编辑',
