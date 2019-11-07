@@ -63,3 +63,8 @@ string.substr(1,3)
 ```JavaScript
 /^\d$/ 
 ```
+
+### 纯汉字
+```JavaScript
+/^[\u4e00-\u9fa5]*$/
+```
