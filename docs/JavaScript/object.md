@@ -25,8 +25,27 @@ Object.values({a:'xixi',b:'haha'}) // ['xixi','haha']
 ```JavaScript
 const copy = JSON.parse(JSON.stringify(obj));
 ```
+```JavaScript
+const deepClone = obj =>{
+    let result = Array.isArray(obj)?[]:{}
+    for(k in obj){
+        if(typeof obj[k] ==== 'object' && obj[k] !== null) result[k] = deepClone(obj[k])
+        else result[k] = obj[k]
+    }
+    return result
+}
+ ```
+ 
+## 浅拷贝
+```JavaScript
+let b= {}
+b=Object.assign(b,a)
+```
+```JavaScript
+let b = {...a}
+```
 
-## 对象展开(深拷贝)
+## 对象展开(浅拷贝)
 ```JavaScript
 const obj1 = {
     name: 'xixi',
@@ -43,3 +62,9 @@ const obj2 = {
 ```JavaScript
 obj.hasOwnProperty(name)
 ```
+
+## 定义只读属性
+Object.defineProperty(obj,id,{
+    value:100,
+    writbale:false
+})
