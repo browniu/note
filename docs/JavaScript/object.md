@@ -63,9 +63,15 @@ const obj2 = {
 obj.hasOwnProperty(name)
 ```
 
-## 定义只读不可枚举属性
+## 定义只读不可枚举不可删除属性
 Object.defineProperty(obj,id,{
     value:100,
     writbale:false,
-    enumerable:false
+    enumerable:false,
+    configurable:false
 })
+
+## 删除对象属性
+```JavaScript
+delete obj.name
+```
