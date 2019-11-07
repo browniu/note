@@ -56,3 +56,10 @@ string.charAt(1)
 ```JavaScript
 string.substr(1,3)
 ```
+
+## 正则匹配
+
+### 纯数字
+```JavaScript
+/^\d$/ 
+```
