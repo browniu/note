@@ -142,3 +142,7 @@ switch(queue.shift()){
 }
 ```
 
+## 求最大值
+```JavaScript
+Math.max.apply(null,[1,3,5])
+```
