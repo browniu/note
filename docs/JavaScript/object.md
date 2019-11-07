@@ -63,8 +63,9 @@ const obj2 = {
 obj.hasOwnProperty(name)
 ```
 
-## 定义只读属性
+## 定义只读不可枚举属性
 Object.defineProperty(obj,id,{
     value:100,
-    writbale:false
+    writbale:false,
+    enumerable:false
 })
