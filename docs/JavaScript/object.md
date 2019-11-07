@@ -38,3 +38,8 @@ const obj2 = {
     ...obj1
 };
 ```
+
+## 检测属性
+```JavaScript
+obj.hasOwnProperty(name)
+```
