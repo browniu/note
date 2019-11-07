@@ -86,6 +86,16 @@ new Set([1,2,3,1,4,1]) //[1,2,3,4]
 [1,2,3].includes(2) // true
 ```
 
+### 充分遍历（有一个满足即可）
+```javascript
+[1,2,3].some(e=>e>2) //true
+```
+
+### 必要遍历（所有元素满足条件）
+```javascript
+[1,2,3].every(e=>e>2) //false
+```
+
 ## 清除无效值
 ```javascript
 const compact = arr => arr.filter(Boolean)
@@ -131,3 +141,4 @@ switch(queue.shift()){
     console.log(queue)
 }
 ```
+
