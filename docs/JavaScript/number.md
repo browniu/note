@@ -28,21 +28,18 @@ Math.floor(3.14) //3
 
 ## 千分符
 ``` javascript
-const thSymbol(number)=>{
-  let result =[]
-  number = number.toString().reverse()
-  number.forEach((l,i)=>{
-    (i%3==0 && i!=0) && result.push(',')
-    result.push(l)
-  })
-  return result.reverse().join('')
-}
+const thousandSymbol = number => {
+    const result = []
+    number = number.toString().split('').reverse()
+    number.forEach((l, i) => {
+        if (i % 3 === 0 && i !== 0) result.push(',');
+        result.push(l)
+    })
+    return result.reverse().join('')
+};
 ```
 ``` javascript
-const thSymbol(number)=>{
-    const rule = /\d{1,3}(?=(\d{3})+$)/g
-    return number.toString().replace(rule, '$&,')
-}
+const thousandSymbolReg = number => number.toString().replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,');
 ```
 
 ## 二进制
