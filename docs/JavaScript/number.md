@@ -44,3 +44,9 @@ const thSymbol(number)=>{
     return number.toString().replace(rule, '$&,')
 }
 ```
+
+## 二进制
+```JavaScript
+(1234).toString(2)
+Number(1234).toString(2)
+```
